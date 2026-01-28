@@ -8,8 +8,6 @@ public class objetoDsf07 {
     private String sname;
     private double salmen;
 
-    Scanner scan = new Scanner(System.in);
-
     public objetoDsf07(String name, String sname, double salmen) {
         this.name = name;
         this.sname = sname;
@@ -40,15 +38,13 @@ public class objetoDsf07 {
         return salmen;
     }
 
-    public void salanual() {
-        double x;
-        x = salmen * 12;
-        System.out.println("O salario anual de " + name + " é de R$" + x);
+    public double salanual() {
+        return salmen * 12;
     }
 
-    public void aumento() {
-        double x;
-        x = (salmen + (salmen * 0.10)) * 12;
-        System.out.println("O salario anual de " + name + " com aumento de 10% é de R$" + x);
+    public double aumento(double percentual) {
+        return (salanual() + (salmen * (percentual / 100)));
     }
+
+
 }

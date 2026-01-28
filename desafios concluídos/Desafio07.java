@@ -1,36 +1,48 @@
 package DesafioPOO;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Desafio07 {
     public static void main(String[] args) {
 
-        int i = 0;
+        int qtd;
 
         Scanner scan = new Scanner(System.in);
 
-        objetoDsf07 funcionario = new objetoDsf07("", "", 0);
+        ArrayList<objetoDsf07> pessoas = new ArrayList<>();
 
-        while(i < 2) {
+        System.out.println("Quantos funcionarios deseja cadastrar?");
+        qtd = scan.nextInt();
+        scan.nextLine();
+
+        for(int i = 0; i < qtd; i++) {
             System.out.println("Informe o nome do funcionario:");
-            funcionario.setName(scan.nextLine());
+            String nome = scan.nextLine();
 
             System.out.println("Informe o sobre nome:");
-            funcionario.setSname(scan.nextLine());
+            String snome = scan.nextLine();
 
             System.out.println("Qual salario mensal?");
-            funcionario.setSalmen(scan.nextDouble());
-
-            System.out.println(funcionario.getName() + " " + funcionario.getSname());
-            System.out.println(funcionario.getSalmen());
-
-            funcionario.salanual();
-            funcionario.aumento();
-
+            double salmen = scan.nextDouble();
             scan.nextLine();
-            System.out.println("");
 
-            i++;
+            objetoDsf07 funcionario = new objetoDsf07(nome, snome, salmen);
+            pessoas.add(funcionario);
+
+            System.out.println("");
+        }
+
+        for(objetoDsf07 f : pessoas) {
+            System.out.println(f.getName() + " " + f.getSname());
+
+            System.out.println("Salario mensal R$" + f.getSalmen());
+
+            System.out.println("Salario anual R$" + f.salanual());
+
+            System.out.println("Salario anual com aumento R$" + f.aumento(10));
+
+            System.out.println("----------------------------------------------");
         }
     }
 }
