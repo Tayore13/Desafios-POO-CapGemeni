@@ -21,15 +21,14 @@ public class TesteFuncionario {
         System.out.println("-----------------------");
 
         System.out.println("Salario anual de ambos:");
-        System.out.println(funcionario1.getNome() + " R$" + funcionario1.salarioAnual());
-        System.out.println(funcionario2.getNome() + " R$" + funcionario2.salarioAnual());
+        System.out.printf("%s R$%.2f%n", funcionario1.getNome(), funcionario1.salarioAnual());
+        System.out.printf("%s R$%.2f%n", funcionario2.getNome(), funcionario2.salarioAnual());
 
         System.out.println("Aplicando aumento em ambos os salarios:");
         funcionario1.aumentoSalario(10);
-        System.out.println("Salario mensal de " + funcionario1.getNome() + " R$" + funcionario1.getSalarioMensal() + ". Anual R$" + funcionario1.salarioAnual());
-
+        System.out.printf("Salario mensal de %s R$%.2f. Anual R$%.2f%n", funcionario1.getNome(), funcionario1.getSalarioMensal(), funcionario1.salarioAnual());
         funcionario2.aumentoSalario(10);
-        System.out.println("Salario mensal de " + funcionario2.getNome() + " R$" + funcionario2.getSalarioMensal() + ". Anual R$" + funcionario2.salarioAnual());
+        System.out.printf("Salario mensal de %s R$%.2f. Anual R$%.2f%n", funcionario2.getNome(), funcionario2.getSalarioMensal(), funcionario2.salarioAnual());
 
     }
 }
