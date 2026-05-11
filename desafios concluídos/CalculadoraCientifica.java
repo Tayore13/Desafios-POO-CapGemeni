@@ -1,10 +1,13 @@
 package DesafioPOO;
 
-public class calculadoraCientifica13 extends objetoDesafio13 {
+public class CalculadoraCientifica extends Calculadora{
 
-    public calculadoraCientifica13() {
+
+
+    public CalculadoraCientifica() {
 
     }
+
 
     public double potencia(double x, double expoente) {
         return Math.pow(x, expoente);
@@ -13,8 +16,9 @@ public class calculadoraCientifica13 extends objetoDesafio13 {
 
     public double raiz(double x) {
         if(x < 0) {
-            throw new IllegalArgumentException("Não existe raíz real de número negativo.");
+            throw new IllegalArgumentException("Não existe raíz real de número negativo");
         }
         return Math.sqrt(x);
     }
+
 }
