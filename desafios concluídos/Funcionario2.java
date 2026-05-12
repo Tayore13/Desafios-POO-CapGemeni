@@ -45,7 +45,7 @@ public class Funcionario2 {
 
 
     public double aumentoSalario() {
-        salarioMensal = salarioMensal + (salarioMensal * 0.1);
+        salarioMensal += (salarioMensal * 0.1);
         return salarioMensal;
     }
 
